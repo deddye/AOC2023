@@ -21,7 +21,7 @@ fn main() {
 
     for (i, row) in arr.iter().enumerate() {
         for (i, col) in row.iter().enumerate() {
-            print!("{} ", col);
+            print!("{}", col);
         }
         println!("");
     }
