@@ -25,7 +25,6 @@ fn main() {
 
                 while j < row.len() && arr[i][j].is_ascii_digit() {
                     digits.insert(0, arr[i][j].to_digit(10).unwrap());
-                    //check to see if there is a symbol for this number
 
                     if !should_add {
                         should_add = check_for_symbol(arr.clone(), i, j, row.len() as isize);
@@ -34,17 +33,12 @@ fn main() {
                     j = j + 1;
                 }
 
-                //if this number should be added, do it
                 if should_add {
-                    if digits.len() == 1 {
-                        sum = sum + digits[0];
-                    } else {
-                        let mut l = digits.len();
-                        while l != 0 {
-                            number = number + digits.pop().unwrap() * 10_u32.pow((l - 1) as u32);
+                    let mut l = digits.len();
+                    while l != 0 {
+                        number = number + digits.pop().unwrap() * 10_u32.pow((l - 1) as u32);
 
-                            l = l - 1;
-                        }
+                        l = l - 1;
                     }
 
                     sum = sum + number;
