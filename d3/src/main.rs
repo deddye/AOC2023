@@ -2,15 +2,6 @@ use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-/**
- * loop through, find all numbers
- * store each number's digits (x, y)
- *
- * loop for each symbol
- * at the symbol, check if its surrounding (x, y) are
- * in the list of numbers are their coordinates
- */
-
 fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -62,8 +53,6 @@ fn main() {
             j = j + 1;
         }
         print!("\nSUM -> {:?}\n", sum);
-
-        println!("");
     }
 }
 
